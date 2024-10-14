@@ -2,6 +2,7 @@ package com.rufusy.spring_data.jpa.persistence;
 
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.util.List;
 
@@ -9,10 +10,10 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
 @Entity
 @Table(name = "sections")
-public class Section {
+public class Section extends BaseEntity {
     @Id
     @GeneratedValue
     private Integer id;

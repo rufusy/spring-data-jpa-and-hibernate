@@ -19,7 +19,7 @@ services:
 
   app:
     build: .
-    image: rufusy/spring-data-jpa-tutorial
+    image: rufusy/spring-data-jpa-examples
     mem_limit: 512m
     environment:
       - SPRING_PROFILES_ACTIVE=docker

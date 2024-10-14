@@ -2,15 +2,16 @@ package com.rufusy.spring_data.jpa.persistence;
 
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
 @Entity
 @Table(name = "lectures")
-public class Lecture {
+public class Lecture extends BaseEntity {
     @Id
     @GeneratedValue
     private Integer id;
