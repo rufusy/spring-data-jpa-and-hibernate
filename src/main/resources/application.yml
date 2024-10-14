@@ -1,0 +1,19 @@
+server.port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/test
+    username: user
+    password: pwd
+    hikari:
+      initialization-fail-timeout: 60000
+  jpa:
+    database: postgresql
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+
+---
+spring.config.activate.on-profile: docker
+
+spring.datasource.url: jdbc:postgresql://postgres:5432/test
