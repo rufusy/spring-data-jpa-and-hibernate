@@ -4,10 +4,12 @@ import com.rufusy.spring_data.jpa.persistence.Author;
 import com.rufusy.spring_data.jpa.persistence.AuthorRepository;
 import com.rufusy.spring_data.jpa.persistence.Video;
 import com.rufusy.spring_data.jpa.persistence.VideoRepository;
+import net.datafaker.Faker;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+
 
 @SpringBootApplication
 public class JpaApplication {
@@ -19,21 +21,23 @@ public class JpaApplication {
     @Bean
     public CommandLineRunner commandLineRunner(AuthorRepository authorRepository, VideoRepository videoRepository) {
         return args -> {
-            Author author = Author.builder()
-                    .firstName("Damian")
-                    .lastName("Scott")
-                    .email("contact@app.com")
-                    .age(50)
-                    .createdBy(1)
-                    .build();
-            authorRepository.save(author);
-
-            Video video = Video.builder()
+    /*        Faker faker = new Faker();
+            for (int i = 0; i < 50; i++) {
+                Author author = Author.builder()
+                        .firstName(faker.name().firstName())
+                        .lastName(faker.name().lastName())
+                        .email(faker.internet().emailAddress())
+                        .age(faker.number().numberBetween(18, 50))
+                        .createdBy(1)
+                        .build();
+                authorRepository.save(author);
+            }*/
+         /*   Video video = Video.builder()
                     .name("abc.mp4")
                     .length(30)
                     .createdBy(1)
                     .build();
-            videoRepository.save(video);
+            videoRepository.save(video);*/
         };
     }
 }
