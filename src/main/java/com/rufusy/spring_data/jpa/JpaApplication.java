@@ -38,6 +38,10 @@ public class JpaApplication {
                     .createdBy(1)
                     .build();
             videoRepository.save(video);*/
+
+//            authorRepository.updateAuthorAge(50, 50);
+
+//            authorRepository.updateAllAuthorsAge(50);
         };
     }
 }
